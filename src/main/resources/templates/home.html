@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Reflected XSS</title>
+    <link rel="stylesheet" type="text/css" href="https://hunter2labs.s3.amazonaws.com/common.css">
+    <script src='https://hunter2labs.s3.amazonaws.com/common.js'></script>
+  </head>
+  <body>
+    <form action="#" th:action="@{/}" th:object="${input}" method="post">
+      <input type='text' th:field="*{content}" />
+      <button type='submit'>Submit</button>
+    </form>
+  </body>
+</html>

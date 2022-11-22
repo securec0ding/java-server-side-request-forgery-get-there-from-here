@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Reflected XSS</title>
+    <link rel="stylesheet" type="text/css" href="https://hunter2labs.s3.amazonaws.com/common.css">
+    <script src='https://hunter2labs.s3.amazonaws.com/common.js'></script>
+  </head>
+  <body>
+    <p>
+      You entered: <span th:utext="${input.content}"></span>
+    </p>
+    <a th:href="@{/}"><-- Do it again</a>
+  </body>
+</html>
